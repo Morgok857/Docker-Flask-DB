@@ -1,5 +1,5 @@
 ## Descripcion
-Prueba de concepto para levantar Flask sobre docker.
+Prueba de concepto para levantar Flask sobre Python 3 en docker.
 
 Dentro del directorio Dockerfile se encuentran los archivos necesarios para generar el contenedor de Flask 
 
