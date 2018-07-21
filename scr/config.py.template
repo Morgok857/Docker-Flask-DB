@@ -1,0 +1,14 @@
+import os
+
+
+class Config(object):
+    # Editar este valor por cualquier otro. Sera utilizado para validar los formularios
+    SECRET_KEY = '9aspawjfn0aw49ik23nfKHN7#@*(K#LNCC)#@(J'
+
+
+class DevelopmentConfig(Config):
+    DEBUG = True
+    # Se debe espesificar la conexion a la base de datos
+    SQLALCHEMY_DATABASE_URI = 'mysql://user:password@IP:PORT/DBName'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+

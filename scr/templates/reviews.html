@@ -1,0 +1,43 @@
+{% extends 'base/base.html' %}
+
+{% block title %} Review {% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        {% if comments %}
+            {% for comment in comments.items %}
+                <div class = "row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <p class="section-heading"> {{ date_format(comment.created_date) }} - {{ comment.username}} :  {{ comment.text}}  </p>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        {% if page_l['current'] == page_l['after'] %}
+               <div class = "row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <p class="section-heading"> Se termino la lista de comentarios  </p>
+                    </div>
+                </div>
+        {% endif %}
+
+       <div class = "row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                {% if not page_l['current'] == page_l['before'] %}
+                    <a href="/reviews/{{ page_l['before'] }}" > Atras</a>
+                {% endif %}
+                <a href="/reviews/{{ page_l['current'] }}" > {{ page_l['current'] }}</a>
+                {% if not page_l['current'] == page_l['after'] %}
+                    <a href="/reviews/{{ page_l['after'] }}" > Adelante</a>
+                {% endif %}
+            </div>
+       </div>
+    </div>
+   <div class="container">
+
+   </div>
+
+
+{% endblock %}

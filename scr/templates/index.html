@@ -1,0 +1,22 @@
+{% extends 'base/base.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+
+	<h2> Mi Flask sitio</h2>
+	<br>
+	{% if guest is not none  %}
+		<p>Welcome To: {{ guest }}</p>
+	{% endif %}
+	<br>
+	<h5>Que podes hacer en esta pagina?</h5>
+	<li><a href = "/login" > Login</li>
+	<li><a href = "/logout" > Logout</li>
+	<li><a href = "/create" > Create User</li>
+	<li><a href = "/comment" > Add Comment</li>
+	<li><a href = "/reviews" > Shows Comment</li>
+
+
+
+{% endblock %}
